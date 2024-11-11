@@ -1,0 +1,81 @@
+﻿<Page x:Class="SharipovFlourMaster.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SharipovFlourMaster"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Редактирование" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Наименование" Margin="5 0 0 0"></TextBlock>
+                <TextBox Name="NameTB" Text="{Binding Name}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Тип" Margin="5 0 0 0" />
+                <ComboBox Name="TypeCB" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Рейтинг" Margin="5 0 0 0"></TextBlock>
+                <TextBox Name="RatingTB" Text="{Binding Rating}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="ФИО директора" Margin="5 0 0 0"></TextBlock>
+                <TextBox Name="DirectorTB" Text="{Binding Director}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Телефон" Margin="5 0 0 0"></TextBlock>
+                <TextBox Name="PhoneTB" Text="{Binding Phone}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Email" Margin="5 0 0 0"></TextBlock>
+                <TextBox Name="EmailTB" Text="{Binding Email}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Margin="10 0 0 0">
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Индекс" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding Index}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Область" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding Oblost}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Город" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding City}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Улица" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding Street}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="Дом" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding House}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="ИНН" Margin="5 0 0 0"></TextBlock>
+                <TextBox  Text="{Binding INN}" Width="200" HorizontalAlignment="Left" Margin="5 0 0 0 "></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="SaveBT" Content="Сохранить" Click="SaveBT_Click" Grid.Row="5" HorizontalAlignment="Center"></Button>
+    </Grid>
+</Page>

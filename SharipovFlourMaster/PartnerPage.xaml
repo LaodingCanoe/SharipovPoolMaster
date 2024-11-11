@@ -1,0 +1,65 @@
+﻿<Page x:Class="SharipovFlourMaster.PartnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SharipovFlourMaster"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PartnerPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Name="PartnerLV" SelectionMode="Single"  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" SelectionChanged="PartnerLV_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Type}" Name="PartnerTypeTB" FontSize="18"></TextBlock>
+                                <TextBlock Text=" | " FontSize="18"></TextBlock>
+                                <TextBlock Text="{Binding Name}" Name="PartnerNameTB" FontSize="18"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Директор: "></TextBlock>
+                                <TextBlock Text="{Binding Director}" Name="DirectotTB"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Телефон: "></TextBlock>
+                                <TextBlock Text="{Binding Phone}" Name="PhoneTB"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Рейтинг: "></TextBlock>
+                                <TextBlock Text="{Binding Rating}" Name="Rating"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="{Binding Sale, StringFormat={}{0} %}" 
+                                   FontSize="20" HorizontalAlignment="Right" 
+                                   VerticalAlignment="Center" Margin="50,0,0,0"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Редактировать" Name="EditBT" Click="EditBT_Click"/>
+                    <MenuItem Header="Удалить" Name="DeleteBT" Click="DeleteBT_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <Button Name="AddBT" Click="AddBT_Click" Content="Добавить" Grid.Row="2"/>
+    </Grid>
+</Page>
